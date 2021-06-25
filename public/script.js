@@ -6,7 +6,7 @@ const vidgrid= document.getElementById("vid-grid") ;
 var mpeer= new Peer(undefined, {
     path : '/peerjs' ,
     host: '/' ,
-    port:'443'
+    port: '443'
 }) 
 
 
