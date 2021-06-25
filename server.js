@@ -14,6 +14,8 @@ const peerserver= ExpressPeerServer(server,{
 }) ;
 
 
+
+
 app.set('view engine','ejs') ;   // using ejs template
 app.use(express.static('public')) ;
 app.use('/peerjs', peerserver) ;
@@ -64,8 +66,8 @@ socket.on('disconnect', () => {
 })
 
 // port given by host where our server will be hosted
-server.listen(process.env.port || 3030) ;
+server.listen(process.env.PORT || 3030) ;
 
 
-console.log(`server running on http://localhost:3030`) ;
+//console.log(`server running on http://localhost:3030`) ;
 
