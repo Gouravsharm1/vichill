@@ -42,6 +42,8 @@ mpeer.on('call', call => {
         audio:a
     }).then(stream=> {
         
+        peers[call.peer] = call ;
+
         call.answer(myvidstr) ;// Answer the call with an A/V stream.
         const vide= document.createElement('video')  ;
         call.on('stream', remoteStream => {
@@ -49,9 +51,13 @@ mpeer.on('call', call => {
         addvid(vide, remoteStream)   // adding the stream that the new user send with call
     });
 
+    call.on('close', () => {
+        vide.remove() ;
+        
+      })
     })
-  
 });
+
 
 
 
