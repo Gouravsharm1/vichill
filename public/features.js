@@ -73,9 +73,10 @@ inputc.parentNode.removeChild(inputc);
 // function to leave the meeting. this will redirect to home page of website
 const leave= ()=>{
 
-    var confirm_result = confirm("Are you sure you want to quit? Note : you can always come again and start a meeting from http://sww.chichat.com");
+    var confirm_result = confirm("Are you sure you want to leave? ");
         if (confirm_result == true) {
-            location.replace("https://www.w3schools.com")
+            socket.disconnect() ;
+            location.replace("https://vichill.herokuapp.com")
         }
 }
 
@@ -84,6 +85,6 @@ const leave= ()=>{
 function sendEmail() {
     var subject = "Inviting to chill out at ViChill";
     var emailBody = 'Hi %0D%0A' + 'I '+name+' am inviting you to come to our meeting by clicking '+ window.location.href 
-    + ' %0D%0ANote : you can always start a new meeting by going to http://abc.com' ;
+    + ' %0D%0ANote : you can always start a new meeting by going to https://vichill.herokuapp.com' ;
     document.location = "mailto:?subject="+subject+"&body="+emailBody;
 }
