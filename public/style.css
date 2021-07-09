@@ -10,12 +10,13 @@
 }
 
 .main__right {
+    height: 100vh;
     flex: 0.2
 }
 
 .main__videos {
     flex-grow: 1;
-    background-color: black;
+    background-image: linear-gradient(rgb(40 38 38), rgb(22 9 9), rgb(44 44 49));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +28,7 @@
 }
 
 .main__right {
-    background-color: #242324;
+    background-image:  linear-gradient(rgb(58 56 56), rgb(37, 34, 37), rgb(16 15 15));
     border-left: 1px solid #3D3D42;
 }
 
@@ -107,9 +108,25 @@
     justify-content: center;
     flex-wrap: wrap;
  }
+
  video{
     height: 300px;
     width: 400px;
     object-fit: cover;
-    padding: 8px;
+    padding: 3px;
+ }
+
+ @media screen and (max-width: 720px) {
+
+    video{
+        height: 300px;
+        width: 250px;
+        object-fit: cover;
+        padding: 4px;
+     }
+    
+ }
+
+ #send_but {
+     color: aliceblue;
  }
