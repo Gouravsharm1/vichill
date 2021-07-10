@@ -4,14 +4,14 @@
 }
 
 .main__left {
-    flex: 0.8;
+    flex: 0.2;
     display: flex;
     flex-direction: column;
 }
 
 .main__right {
     height: 100vh;
-    flex: 0.2
+    flex: 0.8 ;
 }
 
 .main__videos {
@@ -25,8 +25,11 @@
 
 .main__controls {
     background-color: #1C1E20;
+    visibility: hidden;
 }
-
+#video_meet{
+    color: green;
+}
 .main__right {
     background-image:  linear-gradient(rgb(58 56 56), rgb(37, 34, 37), rgb(16 15 15));
     border-left: 1px solid #3D3D42;
@@ -126,7 +129,9 @@
      }
     
  }
-
+#leave_chat{
+    color: red;
+}
  #send_but {
      color: aliceblue;
  }
