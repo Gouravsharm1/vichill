@@ -1,34 +1,27 @@
-const { Socket } = require('engine.io');
-const express= require('express') ;
+const { Socket } = require('engine.io'); // to connect users in a single room
+const express= require('express') ;  // for node.js backend code
 const { v4 : uuidV4} = require('uuid') ;  // to create unique id for every room
-const dotenv= require('dotenv') ;
-const path= require('path') ;
-const app= express() ;
-const server= require('http').Server(app) ;
+const path= require('path') ; // to use the file directly without writing complete path
+const app= express() ; 
+const server= require('http').Server(app) ; // server for app
 const io= require('socket.io')(server) ;  // to make socket connections among participants
-
-
 const {ExpressPeerServer}= require('peer') ;    // webrtc framework for video calling
+//Initializing peer server
 const peerserver= ExpressPeerServer(server,{
-    debug:true 
+    debug:true ,
 }) ;
 
-
-
-
-app.set('view engine','ejs') ;   // using ejs template
+app.set('view engine','ejs') ;   // using ejs template for web pages
 app.use(express.static('public')) ;
 app.use('/peerjs', peerserver) ;
 
-
-dotenv.config({path:__dirname+'/views/config.env'})
-
+// Whem home page of website is called
 app.get('/', (req,res)=>{
     res.render('index') ;   // home page of website
 })
 
+// Whwn room iscreated
 app.get('/meet', (req,res)=>{
-    
     res.redirect(`/${uuidV4()}`) ;   // making a room when started a meeting
 })
 
@@ -43,17 +36,15 @@ app.get('/:room', (req,res)=>{
     res.render('room', {roomId:req.params.room})   
 })
 
-
 // making socket connections with peers
 io.on('connection', socket=>{
-    socket.on('join-room',(roomId , userId)=>{
+    socket.on('join-room',(roomId , userId, username)=>{
         socket.join(roomId) ;   
-        socket.broadcast.to(roomId).emit('user-connected', userId) ;  // telling every participant that a new user has connectedso that they can add his stream too
-       
+        socket.broadcast.to(roomId).emit('user-connected', userId, username) ;  // telling every participant that a new user has connectedso that they can add his stream too
  
 // when someone sends a message it will be send to everryone in the room with message and name of writer
 socket.on('message', (msg,name) => {
-    io.to(roomId).emit('createmsg', msg,name)
+    io.to(roomId).emit('createmsg', msg,name)  // All Users in a room will be able to read message sent by someone
 })
 
 // telling every participant that a user has disconnected so that they can remove his stream.
@@ -61,13 +52,17 @@ socket.on('disconnect', () => {
     socket.broadcast.to(roomId).emit('user-disconnected', userId)
   })
 
-    })
+ // When a user join video meeting
+socket.on('joined-video',(roomId ,userId, username) =>{
+    socket.broadcast.to(roomId).emit('user-connected-video', userId, username) ;   // telling everyone in room that a user has joined video meeting.
+})
 
+// When user leave the video meeting
+socket.on('user-discon-video',(roomId ,userId, username) =>{
+    socket.broadcast.to(roomId).emit('user-left-video', userId, username) ;  
+        })
+    })
 })
 
 // port given by host where our server will be hosted
 server.listen(process.env.PORT || 3030) ;
-
-
-//console.log(`server running on http://localhost:3030`) ;
-
