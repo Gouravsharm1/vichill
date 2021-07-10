@@ -92,5 +92,6 @@ when someone leaves the video meeting, he comes back to chat room.
 
 ![flowchart_of_vichill](flowchart_of_vichill.png?raw=true)
 
+![alt text](https://github.com/Gouravsharm1/vichill/blob/main/flowchart_of_vichill.png?raw=true)
 
  
