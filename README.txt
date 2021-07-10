@@ -73,7 +73,22 @@ views -> index.ejs : home page of website. template was chosen from html5 and ja
            chat.js -> contains the code related to chat feature.
            feature.js -> contains the code and functions for differtent features
            change_appearance.js -> contains function an code that is mostly used for changing style and interface of application
-           
+   
+flowchart.drawio -> contains the flowchart of working of application. It was made using draw.io .
+
+
+Working of application :
+
+working is easy .
+first you create a room where you can chat or start a video meeting.
+then you invite other people to your room. here we use socket.io to createw web sockets to connect everyone in room.
+then someone starts video meeting. peerjs is used to create unique user id for users.
+when someone joins the meeting he tells the socket and then socken tells everyone that new user has connected.
+then everybody calls new user with their video stream.
+new user adds their stream and answer the call with own stream.
+when a user disconnects, then his call is closed by every user and his video stream is removed.
+when someone leaves the video meeting, he comes back to chat room.
+
 
 
  
