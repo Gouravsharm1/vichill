@@ -39,6 +39,5 @@ const sendmsg=()=> {
 const scrollbottom=() => {
     let d= $('.chat_window') ;
     d.scrollTop(d.prop("scrollHeight")) ;
-
 }
  
