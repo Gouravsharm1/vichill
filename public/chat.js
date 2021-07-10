@@ -1,25 +1,27 @@
-var name ;
-// to verify that a null user do not enter the room
+var name ; // this will store the username of participant
+
+// while loop to ensure that no one can joins with name as null or empty string
 while(true)
 {
-    var tname= prompt("whats your name","");  // getting the name of user so that it can be used in chat
+    var tname= prompt("Please tell your name","");  // getting the name of user so that it can be used in chat
     if(tname===null || tname==="")
-    alert("you cannot come without name") ;
+    alert("Sorry!! you cannot come without name") ;
     else {
         name = tname ; break ;
-    }  
+    } 
 }
 
-var text= $('input') ;
+var text= $('input') ;  // text written in chat by user
+
 // jquery function to send the message to all the peers when enter is pressed on keyboard
 $('html').keydown((e)=> {
-        if(e.which==13 && text.val().length!==0) {   // 13 is used because numeric value for enter is 13
+        if(e.which==13 && text.val().length!==0) {   // 13 is used because numeric value for enter is 13 and also checked that something is written in chat
             socket.emit('message', text.val(), name) ;
             text.val('')  // resetting the text typed to blank
         }
 })
 
-// send msg by send button
+// send message by send button
 const sendmsg=()=> {
     if(text.val().length!==0) {  
         socket.emit('message', text.val(), name) ;
@@ -37,6 +39,6 @@ const sendmsg=()=> {
 const scrollbottom=() => {
     let d= $('.chat_window') ;
     d.scrollTop(d.prop("scrollHeight")) ;
+
 }
-    
-    
+ 
