@@ -90,5 +90,7 @@ when a user disconnects, then his call is closed by every user and his video str
 when someone leaves the video meeting, he comes back to chat room.
 
 
+![flowchart_of_vichill](flowchart_of_vichill.png)
+
 
  
