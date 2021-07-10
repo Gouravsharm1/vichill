@@ -73,8 +73,9 @@ views -> index.ejs : home page of website. template was chosen from html5 and ja
            chat.js -> contains the code related to chat feature.
            feature.js -> contains the code and functions for differtent features
            change_appearance.js -> contains function an code that is mostly used for changing style and interface of application
-   
-flowchart.drawio -> contains the flowchart of working of application. It was made using draw.io .
+ 
+
+flowchart_of_vichill.png -> Contains the flowchart of working of application. It was made using draw.io .
 
 
 Working of application :
@@ -89,9 +90,5 @@ new user adds their stream and answer the call with own stream.
 when a user disconnects, then his call is closed by every user and his video stream is removed.
 when someone leaves the video meeting, he comes back to chat room.
 
-
-![flowchart_of_vichill](flowchart_of_vichill.png?raw=true)
-
-![alt text](https://github.com/Gouravsharm1/vichill/blob/main/flowchart_of_vichill.png?raw=true)
 
  
