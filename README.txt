@@ -60,13 +60,20 @@ Other features : 1. Changing the icon of mute button depending upon current stat
                 
 Structure of repository :
 
-Starting point of application : server.js
+Starting point of application : server.js -> contains the backend part of website.
 
 views -> index.ejs : home page of website. template was chosen from html5 and javascript, css and html were modified as per my requirements.
          room.ejs : when a room is created from home page uuid will give unique room id and use this file as room. All other things like chat and video meeting will happen in this room.
          
  images ->  containms background images that are being used in home page.
  assets -> contains css and js files for home page.
+ 
+ public -> style.css: contains the style and css for room.ejs
+           script.js -> contains the main javascript code for web application.
+           chat.js -> contains the code related to chat feature.
+           feature.js -> contains the code and functions for differtent features
+           change_appearance.js -> contains function an code that is mostly used for changing style and interface of application
+           
 
 
  
