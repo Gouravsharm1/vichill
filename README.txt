@@ -75,7 +75,7 @@ views -> index.ejs : home page of website. template was chosen from html5 and ja
            change_appearance.js -> contains function an code that is mostly used for changing style and interface of application
  
 
-flowchart_of_vichill.png -> Contains the flowchart of working of application. It was made using draw.io .
+flowchart_of_vichill.jpeg -> Contains the flowchart of working of application. It was made using draw.io .
 
 
 Working of application :
@@ -91,9 +91,13 @@ when a user disconnects, then his call is closed by every user and his video str
 when someone leaves the video meeting, he comes back to chat room.
 
 
-some known bugs :
+Some known bugs :
 1. Same person can join room more than once : This is because we are not storing any data related to user and his rooms so he can join anywhere any number of times. Otherwise if we maintain a database of user and rooms, then we can easily check if a user is already present in the room or not. Hence we give an alert and advise user to not join same room more than once.
+In our app, We will advise him to not join same room again everytime he joins a room.
 2. A person can join video meeting in more than one room simultaneously : It can be solved if we maintain a database of user and keep a boolean to detect if he is already in a meeting or not. Every time he joins a meeting, we make that bool (in_meeting) true, and make it false when he leaves a meeting. When he wants to join a meeting, we can check if he is already in meeting and decide accordingly.
+In our app, we will ask him to leave all other meetings before joining a new meeting.
+3. If a person joins video meeting in more than one room from same system then video lags more : This is because the system have to divide its resources to continue more meetings hence more lag.
+4. Sometime there is a problem due to server or system that some functionalities of app stops to work : Then we need to rejoin the room or meeting. 
 
 
  
