@@ -91,4 +91,9 @@ when a user disconnects, then his call is closed by every user and his video str
 when someone leaves the video meeting, he comes back to chat room.
 
 
+some known bugs :
+1. Same person can join room more than once : This is because we are not storing any data related to user and his rooms so he can join anywhere any number of times. Otherwise if we maintain a database of user and rooms, then we can easily check if a user is already present in the room or not. Hence we give an alert and advise user to not join same room more than once.
+2. A person can join video meeting in more than one room simultaneously : It can be solved if we maintain a database of user and keep a boolean to detect if he is already in a meeting or not. Every time he joins a meeting, we make that bool (in_meeting) true, and make it false when he leaves a meeting. When he wants to join a meeting, we can check if he is already in meeting and decide accordingly.
+
+
  
