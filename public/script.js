@@ -171,7 +171,7 @@ function leave_video() {
     var cop = document.createElement("button");  // Button to copy meeting invite link
     cop.innerHTML= "Copy Link" ;
     cop.setAttribute("id", "copy_button_old") ;
-    cop.setAttribute("onclick", "copy()")
+    cop.setAttribute("onclick", "Copy()")
     var mail = document.createElement("button"); // Button to invite via mail
     mail.innerHTML= "Invite via Email" ;
     mail.setAttribute("id", "sendmail") ;
