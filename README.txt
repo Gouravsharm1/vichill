@@ -45,7 +45,7 @@ Video meeting features : 1. Advise you to leave video from other rooms before jo
                          5. Camera on and off options.
                          6. Copy link button to copy invite link of room.
                          7. Invite via Email to invite people by sending email by your own id.
-                         8. Doodle together, it will open a new tab where you can draw together.
+                         8. Doodle together, it will open a new tab where you can draw together (using third party website but can be helpful for participants).
                          9. Leave meeting, it will disconnect you from video meeting and will send you back to room.
                          10. Use of icons for easy use.
                          
