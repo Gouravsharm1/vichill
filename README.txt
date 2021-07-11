@@ -56,7 +56,35 @@ Other features : 1. Changing the icon of mute button depending upon current stat
                  4. Changing the icon of camera on/off button depending upon current state.
                  5. Changing the color and name of camera on/off button depending upon current state.
                  6. Dynamic changing of background on homepage of website.
-                
+ 
+ 
+ Development of application :
+ 
+ It was developed using Agile Methodology where i divided my complete development into Iterations.
+ -> Started from 14 June, At first I researched about the resources that can be used for this video calling application. Where I got to know about WebRTC , Microsoft Azure communication services, Web sockets and finally i picked up Peerjs for using WebRTC and socket.io to make web socket connections and read their documentation. Then I designed my application and divided the complete development into 4 iterations till 10th July.
+ 
+ 1st Iteration (21-25)June -> I build minimum criteria where two persons can connect on video call and then added 3 more features- Mute/Unmute , Camera On/Off , Leave meeting. After testing them I hosted it and tried with my friends and found some bugs.
+ 
+ 2nd Iteration (25-30)June -> Solved the bug in which video screen was freezed of user who left the meeting. Now more than 2 person can easily connect and I added 4 more features -Colour change of Mute, Camera and copy button on click, Doodle Together (a drawing tool for fun), Chat feature, Invite via Email.
+ 
+ 3rd Iteration (1-5)july -> Solved the bug in which Invite via email feature was removing the person from meeting. Then added more feature - Notification in the chat when someone joins the meeting, As more participants join the meeting video screen size will shrink.
+ 
+ 4th Iteration (6-10)July Adopt Phase -> Here we were asked to adopt our application to additional feature in which participants can continue the conversation before and after the meeting. Firstly I Solved the bug in which a person can join the meeting without any name. Then for additional I did following changes :
+ - Rather then directly starting a meeting on click, now a room will be created from where you can invite people into your room.
+ - You can join Video meeting from there whenever you want. On joining video meeting other participants will be notified about it. Interface of the page will be changed for you.
+ - When you leave the video meeting, Page interface will be again changed and you will still be in that room. You can continue the chat in room. When You leave the room, You will be sent to home page.
+ 
+ 
+ 
+Some known bugs :
+1. Same person can join room more than once : This is because we are not storing any data related to user and his rooms so he can join anywhere any number of times. Otherwise if we maintain a database of user and rooms, then we can easily check if a user is already present in the room or not. Hence we give an alert and advise user to not join same room more than once.
+In our app, We will advise him to not join same room again everytime he joins a room.
+2. A person can join video meeting in more than one room simultaneously : It can be solved if we maintain a database of user and keep a boolean to detect if he is already in a meeting or not. Every time he joins a meeting, we make that bool (in_meeting) true, and make it false when he leaves a meeting. When he wants to join a meeting, we can check if he is already in meeting and decide accordingly.
+In our app, we will ask him to leave all other meetings before joining a new meeting.
+3. If a person joins video meeting in more than one room from same system then video lags more : This is because the system have to divide its resources to continue more meetings hence more lag.
+4. Sometime there is a problem due to server or system that some functionalities of app stops to work : Then we need to rejoin the room or meeting. 
+
+ 
                 
 Structure of repository :
 
@@ -91,13 +119,6 @@ when a user disconnects, then his call is closed by every user and his video str
 when someone leaves the video meeting, he comes back to chat room.
 
 
-Some known bugs :
-1. Same person can join room more than once : This is because we are not storing any data related to user and his rooms so he can join anywhere any number of times. Otherwise if we maintain a database of user and rooms, then we can easily check if a user is already present in the room or not. Hence we give an alert and advise user to not join same room more than once.
-In our app, We will advise him to not join same room again everytime he joins a room.
-2. A person can join video meeting in more than one room simultaneously : It can be solved if we maintain a database of user and keep a boolean to detect if he is already in a meeting or not. Every time he joins a meeting, we make that bool (in_meeting) true, and make it false when he leaves a meeting. When he wants to join a meeting, we can check if he is already in meeting and decide accordingly.
-In our app, we will ask him to leave all other meetings before joining a new meeting.
-3. If a person joins video meeting in more than one room from same system then video lags more : This is because the system have to divide its resources to continue more meetings hence more lag.
-4. Sometime there is a problem due to server or system that some functionalities of app stops to work : Then we need to rejoin the room or meeting. 
-
+Thanks a lot to Microsoft and my Mentors Sriharsha B. S. and Meghna Vasudava for their kind mentorship and guidance.
 
  
