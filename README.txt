@@ -76,7 +76,7 @@ Other features : 1. Changing the icon of mute button depending upon current stat
  
  
  
-Some known bugs :
+Some Limitations of product :
 1. Same person can join room more than once : This is because we are not storing any data related to user and his rooms so he can join anywhere any number of times. Otherwise if we maintain a database of user and rooms, then we can easily check if a user is already present in the room or not. Hence we give an alert and advise user to not join same room more than once.
 In our app, We will advise him to not join same room again everytime he joins a room.
 2. A person can join video meeting in more than one room simultaneously : It can be solved if we maintain a database of user and keep a boolean to detect if he is already in a meeting or not. Every time he joins a meeting, we make that bool (in_meeting) true, and make it false when he leaves a meeting. When he wants to join a meeting, we can check if he is already in meeting and decide accordingly.
@@ -103,7 +103,7 @@ views -> index.ejs : home page of website. template was chosen from html5 and ja
            change_appearance.js -> contains function an code that is mostly used for changing style and interface of application
  
 
-flowchart_of_vichill.jpeg -> Contains the flowchart of working of application. It was made using draw.io .
+flowchart_of_vichill.jpg -> Contains the flowchart of working of application. It was made using draw.io .
 
 
 Working of application :
