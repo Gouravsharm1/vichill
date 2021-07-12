@@ -104,7 +104,7 @@ views -> index.ejs : home page of website. template was chosen from html5 and ja
  
 
 flowchart_of_vichill.jpg -> Contains the flowchart of working of application. It was made using draw.io .
-
+profiling.png -> Profiling of application was done for 54 seconds, in which people joined and leave the meeting.
 
 Working of application :
 
