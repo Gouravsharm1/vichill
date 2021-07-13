@@ -1,5 +1,5 @@
 var myscreen ='';  // saving own screen
-function startCapture(){
+function start_screen_share(){
  try{
    navigator.mediaDevices.getDisplayMedia({
      video: {
@@ -17,7 +17,7 @@ function startCapture(){
 
        screen.getVideoTracks()[0].addEventListener( 'ended', () => {
             stopSharingScreen();
-            myvid.srcObject = myvidstr;
+            myvid.srcObject = myvidstr;  // now again changing the source for own video, it will now show video stream
         } );
    }).catch(err => {
      console.log(err); // for checking error in console
@@ -29,7 +29,7 @@ function startCapture(){
 
 };
 
-
+// Function will be called when screen sharing is stopped
 function stopSharingScreen(){
   return new Promise( ( res, rej ) => {
           screen.getTracks().length ? screen.getTracks().forEach( track => track.stop() ) : '';
@@ -41,19 +41,21 @@ function stopSharingScreen(){
           } );
 }
 
-function broadcastNewTracks( stream, type) {
-    let track = type == 'audio' ? stream.getAudioTracks()[0] : stream.getVideoTracks()[0];
-    for ( let p in peers ) {
-        let pName = peers[p];
-        if ( typeof pName == 'object' ) {
-            replaceTrack( track, pName);
-        }
-    }
-}
 // function to replace video screen with desktop screen
 function replaceTrack( stream, recipientPeer ) {
     let sender = recipientPeer.peerConnection.getSenders ? recipientPeer.peerConnection.getSenders().find( s => s.track && s.track.kind === stream.kind ) : false;
     sender ? sender.replaceTrack( stream ) : '';
+}
+
+// This function is used to change the video in other user's screen.
+function broadcastNewTracks( stream, type) {
+    let track = type == 'audio' ? stream.getAudioTracks()[0] : stream.getVideoTracks()[0];
+    for ( let pe in peers ) {
+        let Name = peers[pe];
+        if ( typeof Name == 'object' ) {
+            replaceTrack( track, Name);
+        }
+    }
 }
 
 
