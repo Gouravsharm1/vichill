@@ -48,13 +48,14 @@ Video meeting features : 1. Advise you to leave video from other rooms before jo
                          8. Doodle together, it will open a new tab where you can draw together (using third party website but can be helpful for participants).
                          9. Leave meeting, it will disconnect you from video meeting and will send you back to room.
                          10. Use of icons for easy use.
+                         11. If a person closes the tab without leaving meeting, his video will still be removed.
                          
-Other features : 1. Changing the icon of mute button depending upon current state.
-                 2. Changing the color and name of mute button depending upon current state.
+Other features : 1. Changing the icon and name of mute button depending upon current state.
+                 2. Changing the color of mute button depending upon current state.
                  2. Flash a temporary green light on copy link button to notify that link has been copied.
                  3. pre populated email with your name, invite link and subject, so that you just have to type the email address of receiver and send it.
-                 4. Changing the icon of camera on/off button depending upon current state.
-                 5. Changing the color and name of camera on/off button depending upon current state.
+                 4. Changing the icon and name camera on/off button depending upon current state.
+                 5. Changing the color of camera on/off button depending upon current state.
                  6. Dynamic changing of background on homepage of website.
  
  
