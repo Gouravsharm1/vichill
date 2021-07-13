@@ -22,11 +22,9 @@ function start_screen_share(){
    }).catch(err => {
      console.log(err); // for checking error in console
    })
-
  }catch(err){
     console.log(err); // for checking error in console
  }
-
 };
 
 // Function will be called when screen sharing is stopped
@@ -57,5 +55,3 @@ function broadcastNewTracks( stream, type) {
         }
     }
 }
-
-
