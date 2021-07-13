@@ -97,7 +97,7 @@ Starting point of application : server.js -> contains the backend part of websit
 views -> index.ejs : home page of website. template was chosen from html5 and javascript, css and html were modified as per my requirements.
          room.ejs : when a room is created from home page uuid will give unique room id and use this file as room. All other things like chat and video meeting will happen in this room.
          
- images ->  containms background images that are being used in home page.
+ images ->  contains background images that are being used in home page.
  assets -> contains css and js files for home page.
  
  public -> style.css: contains the style and css for room.ejs
@@ -113,7 +113,6 @@ profiling.png -> Profiling of application was done for 54 seconds, in which peop
 
 Working of application :
 
-working is easy .
 first you create a room where you can chat or start a video meeting.
 then you invite other people to your room. here we use socket.io to createw web sockets to connect everyone in room.
 then someone starts video meeting. peerjs is used to create unique user id for users.
