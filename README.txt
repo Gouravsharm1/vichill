@@ -46,9 +46,11 @@ Video meeting features : 1. Advise you to leave video from other rooms before jo
                          6. Copy link button to copy invite link of room.
                          7. Invite via Email to invite people by sending email by your own id.
                          8. Doodle together, it will open a new tab where you can draw together (using third party website but can be helpful for participants).
-                         9. Leave meeting, it will disconnect you from video meeting and will send you back to room.
-                         10. Use of icons for easy use.
-                         11. If a person closes the tab without leaving meeting, his video will still be removed.
+                         9. You can also share your screen over video meeting.
+                         10. Leave meeting, it will disconnect you from video meeting and will send you back to room.
+                         11. Use of icons for easy use.
+                         12. If a person closes the tab without leaving meeting, his video will still be removed.
+                         
                          
 Other features : 1. Changing the icon and name of mute button depending upon current state.
                  2. Changing the color of mute button depending upon current state.
@@ -74,6 +76,7 @@ Other features : 1. Changing the icon and name of mute button depending upon cur
  - Rather then directly starting a meeting on click, now a room will be created from where you can invite people into your room.
  - You can join Video meeting from there whenever you want. On joining video meeting other participants will be notified about it. Interface of the page will be changed for you.
  - When you leave the video meeting, Page interface will be again changed and you will still be in that room. You can continue the chat in room. When You leave the room, You will be sent to home page.
+ - As there were some days left, i added screen share feature.
  
  
  
@@ -102,6 +105,7 @@ views -> index.ejs : home page of website. template was chosen from html5 and ja
            chat.js -> contains the code related to chat feature.
            feature.js -> contains the code and functions for differtent features
            change_appearance.js -> contains function an code that is mostly used for changing style and interface of application
+           screen_share.js -> contains code related to screen share feature.
  
 
 flowchart_of_vichill.jpg -> Contains the flowchart of working of application. It was made using draw.io .
