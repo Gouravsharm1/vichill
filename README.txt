@@ -7,7 +7,7 @@ web page template : ejs (embedded java script) to easily use javascript code str
 uuid : to generate random unique id for room.
 
 Hosted on : heroku
-Any database is not used by choice to make it simple to use and talk freely because chat will disaapear when you leave the room.
+Any database or authentication is not used by choice to make it simple to use easily accessible by everyone. You can talk freely because all data will disappear when you leave the room.
 
 wesite link : https://vichill.herokuapp.com
 
